@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import {CardAnnounce} from "./components/CardAnnounce"
-import { createTheme, ThemeProvider, Typography } from "@mui/material/styles";
+import {RecentAnnouncements} from "./components/landing-page/RecentAnnouncements"
+import { createTheme, ThemeProvider} from "@mui/material/styles";
 function App() {
   const theme = createTheme({
     typography: {
@@ -10,7 +10,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <CardAnnounce/>
+      <RecentAnnouncements/>
     </ThemeProvider>
     
   );
