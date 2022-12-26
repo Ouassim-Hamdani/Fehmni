@@ -1,0 +1,1 @@
+export const cardInfo = {title:"Full Taylor Swift Eras Tour 2022",user:{name:"Taylor Swift",avatar:"avatar.png"},module:"Math",status:"onsite",location:"Amizour, Bejaia",price:1500,level:"1AM",image:'thumbnail.jpg',isSaved:true}

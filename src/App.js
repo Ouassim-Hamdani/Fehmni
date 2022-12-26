@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {CardAnnounce} from "./components/CardAnnounce"
+import { createTheme, ThemeProvider, Typography } from "@mui/material/styles";
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Open Sans", "sans serif"].join(","),
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CardAnnounce/>
+    </ThemeProvider>
+    
   );
 }
 
