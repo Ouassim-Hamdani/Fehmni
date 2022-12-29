@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {RecentAnnouncements} from "./components/landing-page/RecentAnnouncements"
+import {Footer} from "./components/Footer"
 import { createTheme, ThemeProvider} from "@mui/material/styles";
 function App() {
   const theme = createTheme({
@@ -10,7 +10,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <RecentAnnouncements/>
+      <Footer/>
     </ThemeProvider>
     
   );
