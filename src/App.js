@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { SearchSection } from './components/search-page/SearchSection';
+import { ProfileSection } from './components/profile-page/ProfileSection';
 import { createTheme, ThemeProvider} from "@mui/material/styles";
 function App() {
   const theme = createTheme({
@@ -10,7 +10,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <SearchSection/>
+      <ProfileSection/>
     </ThemeProvider>
     
   );
