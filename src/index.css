@@ -16,4 +16,12 @@ code {
     monospace;
 }
 
+.cover {
+  background-image: url("assets/cover.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right;
+}
+
+
 
