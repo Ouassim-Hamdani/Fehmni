@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { ProfileSection } from './components/profile-page/ProfileSection';
+import { FavoritesPage } from './pages/FavoritesPage';
 import { createTheme, ThemeProvider} from "@mui/material/styles";
 function App() {
   const theme = createTheme({
@@ -10,7 +9,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={theme}>
-      <ProfileSection/>
+      <FavoritesPage/>
     </ThemeProvider>
     
   );
