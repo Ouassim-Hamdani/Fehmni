@@ -8,8 +8,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 export const Footer = () => {
   return (
-    <Container className='bg-[#A9A4DE] flex flex-col justify-center items-center w-full py-4 px-10 space-y-4' maxWidth={false}>
-        <div className='flex flex-row  justify-between border-b pb-4 '>
+    <Container className='bg-[#A9A4DE] flex flex-col justify-center items-center w-full py-6 px-10 space-y-4' maxWidth={false}>
+        <div id='aboutus' className='flex flex-row  justify-between border-b pb-4 '>
           <div className='md:flex hidden flex-col space-y-4 w-1/2 '>
             <Typography variant='h5' className='text-gray-900 font-semibold'>About us</Typography>
             <Typography variant="body1" className='text-gray-800'>We are a group of Estin students forced to build this horrible so called idea of a project,

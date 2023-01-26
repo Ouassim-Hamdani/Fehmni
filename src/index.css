@@ -19,8 +19,37 @@ code {
 .cover {
   background-image: url("assets/cover.svg");
   background-repeat: no-repeat;
-  background-size: auto;
+  top:0;
   background-position: right;
+}
+.cover2 {
+  background-image: url("assets/cover2.svg");
+  background-repeat: no-repeat;
+  top:0;
+  background-position: right;
+  
+}
+.divimg {
+  background-color: #494949;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.post {
+  z-index: 599999999000000000000000000000;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  width: 160px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 

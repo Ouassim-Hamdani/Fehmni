@@ -40,6 +40,7 @@ export const CardAnnounce = ({cardList}) => {
     if (savedState) {
       activeCard.isSaved = false;
       setSavedState(false)
+      
     }
     else {
       activeCard.isSaved = true;
@@ -48,50 +49,55 @@ export const CardAnnounce = ({cardList}) => {
   console.log(savedState)
   }
   return (
-    
-    <Card className='rounded-xl p-4 border border-gray-200' sx={{ maxWidth: 300 }}>
+      <Card className='rounded-xl p-4 border border-gray-200' sx={{ maxWidth: 300 }}>
+      <a href="/announce/1">
 
-      <CardMedia
-        className='rounded-xl'
-        component="img"
-        alt="Thumbnail image"
-        height="120"
-        src={require("../assets/"+activeCard.image)}
-      />
-      <CardContent className='space-y-4 p-0 pt-2'>
-        <Typography gutterBottom variant="h6" className=' font-medium  text-gray-800' component="div">
-          {activeCard.title}
-        </Typography>
-        <div className='flex flex-row items-center justify-between'>
-          <div className='flex flex-row items-center space-x-2'>
-          <Avatar src={require("../assets/"+activeCard.user.avatar)} className="w-8 h-8"></Avatar>
-          <Typography variant="body1">{activeCard.user.name}</Typography>
-          </div>
-          <div className='level'>
-      
-            <Chip label={activeCard.level} size='small' className={`bg-[${colorLevel}] text-${colorText} text-sm`} icon={<SchoolOutlinedIcon className={`w-5 h-5 fill-${colorText}`} />}/>
-          </div>
-        </div>
-        <Typography className='text-green-700 font-semibold' variant="h5">{activeCard.price} DA</Typography>
+<CardMedia
+  className='rounded-xl'
+  component="img"
+  alt="Thumbnail image"
+  height="120"
+  src={require("../assets/"+activeCard.image)}
+/>
+<CardContent className='space-y-4 p-0 pt-2'>
+  <Typography gutterBottom variant="h6" className=' font-medium  text-gray-800' component="div">
+    {activeCard.title}
+  </Typography>
+  <div className='flex flex-row items-center justify-between'>
+    <div className='flex flex-row items-center space-x-2'>
+    <Avatar src={require("../assets/"+activeCard.user.avatar)} className="w-8 h-8"></Avatar>
+    <Typography variant="body1">{activeCard.user.name}</Typography>
+    </div>
+    <div className='level'>
+
+      <Chip label={activeCard.level} size='small' className={`bg-[${colorLevel}] text-${colorText} text-sm`} icon={<SchoolOutlinedIcon className={`w-5 h-5 fill-${colorText}`} />}/>
+    </div>
+  </div>
+  <Typography className='text-green-700 font-semibold' variant="h5">{activeCard.price} DA</Typography>
+  
+</CardContent>
+</a>
+<CardActions className='flex flex-row items-center justify-between p-0'>
+  <div className='flex flex-row items-center space-x-4'>
+      <div className='module items-center flex flex-row space-x-2'>
+        <img src={moduleIcon} alt="" />
+        <span className='text-[#444444]'>{activeCard.module}</span>
+      </div>
+      <div className='location items-center flex flex-row'>
+        {activeCard.status==="onsite"?<LocationOnIcon className='fill-[#444444]'></LocationOnIcon>:<img className='pr-2' src={zoomIcon} alt="" />}
         
-      </CardContent>
-      <CardActions className='flex flex-row items-center justify-between p-0'>
-        <div className='flex flex-row items-center space-x-4'>
-            <div className='module items-center flex flex-row space-x-2'>
-              <img src={moduleIcon} alt="" />
-              <span className='text-[#444444]'>{activeCard.module}</span>
-            </div>
-            <div className='location items-center flex flex-row'>
-              {activeCard.status==="onsite"?<LocationOnIcon className='fill-[#444444]'></LocationOnIcon>:<img className='pr-2' src={zoomIcon} alt="" />}
-              
-              <span className='text-[#444444]'>{activeCard.status==="onsite"?activeCard.location:"Online"}</span>
-            </div>
-        </div>
-        <IconButton>
-            {savedState?<TurnedInIcon onClick={handleClick} className="bookmark w-7 h-7 fill-gray-800"></TurnedInIcon>:<TurnedInNotIcon onClick={handleClick} className="bookmark w-7 h-7 fill-gray-800"></TurnedInNotIcon>}
-            
-        </IconButton>
-      </CardActions>
-    </Card>
+        <span className='text-[#444444]'>{activeCard.status==="onsite"?activeCard.location:"Online"}</span>
+      </div>
+  </div>
+  
+  <IconButton>
+      {savedState?<TurnedInIcon onClick={handleClick} className="bookmark w-7 h-7 fill-gray-800"></TurnedInIcon>:<TurnedInNotIcon onClick={handleClick} className="bookmark w-7 h-7 fill-gray-800"></TurnedInNotIcon>}
+      
+  </IconButton>
+  
+</CardActions>
+</Card>
+
+    
   );
 }
