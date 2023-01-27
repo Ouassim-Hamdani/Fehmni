@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer';
 import { RecentAnnouncements } from '../components/landing-page/RecentAnnouncements';
 import { PostOffer } from '../components/landing-page/PostOffer';
 export const LandingPage = () => {
-  let [navState,setNavState] = useState("user");
+  let [navState,setNavState] = useState("use");
   let [open,setOpen] = useState(false);
   return (
     <div className='cover  bg-right-top'>

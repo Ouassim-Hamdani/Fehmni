@@ -37,38 +37,38 @@ export const FilterSection = () => {
   }
 
   return (
-    <div className='w-full' style={{display: 'flex', fontFamily:'Open Sans', fontSize: 14, fontWeight: 500, justifyContent:'between'}}>
-      <div style={{display: 'flex',flexDirection: 'column', alignItems:'flex-start',gap:4}}>
-        <div>Time</div>
-        <div style={{display:'flex', alignItems:'center', gap:15}}>
+    <div className='w-full md:flex-row flex-col md:justify-between justify-center items-center text-center md:text-left' style={{display: 'flex', fontFamily:'Open Sans', fontSize: 14, fontWeight: 500}}>
+      <div className='md:items-start items-center' style={{display: 'flex',flexDirection: 'column',gap:4}}>
+        <div className='md:flex hidden'>Time</div>
+        <div className='md:flex-row flex-col' style={{display:'flex', alignItems:'center', gap:15}}>
           From
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker className='' label=" " variant='inline' onChange={timeFromUpdated} inputFormat='DD/MM/YYYY' InputProps={{disableUnderline: true}} value={timeFrom} renderInput={(params) => <TextField {...params} variant='standard' className='border border-gray-700' size='small' sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600}, backgroundColor:'white',borderRadius: 7,height: 50 , paddingRight: 2, paddingLeft: 2,width:"140px"}}/>}/>
+            <DatePicker className='w-36' label=" " variant='inline' onChange={timeFromUpdated} inputFormat='DD/MM/YYYY' InputProps={{disableUnderline: true}} value={timeFrom} renderInput={(params) => <TextField {...params} variant='standard' className='border border-gray-700' size='small' sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600},height: 50,  backgroundColor:'white',borderRadius: 7, paddingRight: 2, paddingLeft: 2}}/>}/>
           </LocalizationProvider>
           to
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker label=" " variant='inline' onChange={timeToUpdated} inputFormat='DD/MM/YYYY' InputProps={{disableUnderline: true}} value={timeTo} renderInput={(params) => <TextField {...params} variant='standard' size='small' sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600}, backgroundColor:'white',borderRadius: 7, height: 50, paddingRight:2,paddingLeft:2,width:"140px"}}/>}/>
+          <DatePicker className='w-36' label=" " variant='inline' onChange={timeFromUpdated} inputFormat='DD/MM/YYYY' InputProps={{disableUnderline: true}} value={timeFrom} renderInput={(params) => <TextField {...params} variant='standard' className='border border-gray-700' size='small' sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600},height: 50,  backgroundColor:'white',borderRadius: 7, paddingRight: 2, paddingLeft: 2}}/>}/>
           </LocalizationProvider>
         </div>
       </div>
-      <div style={{display: 'flex',flexDirection: 'column', alignItems:'flex-start',gap:4}}>
-        <div style={{paddingLeft:13}}>Subject</div>
+      <div className='md:pt-0 pt-4 md:items-start items-center' style={{display: 'flex',flexDirection: 'column',gap:4}}>
+        <div className='md:pl-3 pl-0 md:pb-0 pb-1' >Subject</div>
         <div style={{display:'flex', alignItems:'center'}}>
           <TextField variant='standard' value={subject} onChange={subjectUpdated} select InputProps={{disableUnderline: true}} sx={{input:{color:'#2E2E2E',fontFamily:'Open Sans',fontWeight:600}, backgroundColor:'white',borderRadius: 35,height: 40, paddingTop:1 , paddingRight: 2, paddingLeft: 2, width: "200px"}}>
             {subjects.map((elem) =>(<MenuItem key={elem} value={elem}>{elem}</MenuItem>))}
           </TextField>
         </div>
       </div>
-      <div style={{display: 'flex',flexDirection: 'column', alignItems:'flex-start',gap:4}}>
-        <div style={{paddingLeft:13}}>Wilaya</div>
+      <div className='md:pt-0 pt-4 md:items-start items-center' style={{display: 'flex',flexDirection: 'column',gap:4}}>
+        <div className='md:pl-3 pl-0 md:pb-0 pb-1'  >Wilaya</div>
         <div style={{display:'flex', alignItems:'center'}}>
           <TextField value={wilaya} onChange={wilayaUpdated} variant='standard' select InputProps={{disableUnderline: true}} sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600}, backgroundColor:'white',borderRadius: 35,height: 40, paddingTop:1 , paddingRight: 2, paddingLeft: 2, width: 200}}>
             {wilayas.map((elem,index) =>(<MenuItem key={elem} value={elem}>{index+1} - {elem}</MenuItem>))}
           </TextField>
         </div>
       </div>
-      <div style={{display: 'flex',flexDirection: 'column', alignItems:'flex-start',gap:4}}>
-        <div style={{paddingLeft:13}}>Commune</div>
+      <div className='md:pt-0 pt-4 md:items-start items-center' style={{display: 'flex',flexDirection: 'column',gap:4}}>
+        <div className='md:pl-3 pl-0 md:pb-0 pb-1' >Commune</div>
         <div style={{display:'flex', alignItems:'center'}}>
           <TextField disabled={disabled} value={commune} onChange={communeUpdated} variant='standard' select InputProps={{disableUnderline: true}} sx={{input:{color:'#2E2E2E',fontSize:12,fontFamily:'Open Sans',fontWeight:600}, backgroundColor:'white',borderRadius: 35,height: 40, paddingTop:1 , paddingRight: 2, paddingLeft: 2, width: 200}}>
             {communes.map((elem) =>{

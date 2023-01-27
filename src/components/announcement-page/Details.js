@@ -3,7 +3,7 @@ import React from 'react'
 export const Details = ({title, module, level, status, price, date, wilaya, commune, city, address}) => {
   return (
     <div className='mx-12' style={{ fontFamily: 'Open Sans', display:'flex', flexDirection: 'column', alignContent:'flex-start', gap:8}}>
-      <div style={{fontWeight: 600, fontSize: 26, marginBottom: 8, textAlign:'start', paddingLeft: 5}}>Details</div>
+      <div className='md:text-start text-center' style={{fontWeight: 600, fontSize: 26, marginBottom: 8, paddingLeft: 5}}>Details</div>
       <div className="border border-gray-200 shadow-sm" style={{backgroundColor: 'white', borderRadius: 10, fontSize: 16, paddingLeft: 20, paddingTop: 3, paddingBottom: 3}}>
         <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr', justifyItems:'start', height: 40}}>
           <div style={{gridRow: 1, gridColumn: 1, display:'flex', alignItems: 'center', marginLeft: 3}}>Title</div>

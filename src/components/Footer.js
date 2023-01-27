@@ -16,8 +16,8 @@ export const Footer = () => {
 for us just to live under stress conditons like animals and ba hnanj7o f concours ta3 air algerie</Typography>
           </div>
           <div className='flex flex-col space-y-4 md:w-1/3'>
-              <Typography variant="h5" className='text-gray-900 font-semibold'>Contact Us</Typography>
-              <ul className='space-y-4'>
+              <Typography variant="h5" className='text-gray-900 font-semibold md:text-left text-center'>Contact Us</Typography>
+              <ul className='space-y-4 flex flex-col md:items-start items-center'>
                   <li className='flex flex-row space-x-2'>
                       <BusinessRoundedIcon className='fill-gray-800'/>
                       <Typography variant='body1' className='text-gray-800'>Ecole sup en stress et depression</Typography>

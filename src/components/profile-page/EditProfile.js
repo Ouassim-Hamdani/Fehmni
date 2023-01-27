@@ -90,7 +90,7 @@ export const EditProfile = ({support,imageSource, firstName, lastName, mail, wil
     <Button onClick={saveModif} endIcon={<SaveRounded/>} variant='contained' sx={{backgroundColor: '#3199F9', color: 'white', borderRadius: 5, textTransform: 'none', marginBottom: 5, width: 100}}>Save</Button>
   </div>
   }else{
-    Edit=<div style={{backgroundColor: 'white', width: 530, borderRadius: 20, display:'flex', flexDirection: 'column', alignItems:'center', fontFamily: 'Open Sans', gap: 25}}>
+    Edit=<div className="md:w-[530px] w-72" style={{backgroundColor: 'white', width: 530, borderRadius: 20, display:'flex', flexDirection: 'column', alignItems:'center', fontFamily: 'Open Sans', gap: 25}}>
     <input accept='.png,.jpg' ref={inputFile} onChange={handleFileUpload} type='file' style={{display: 'none'}}/>
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10}}>
       <div style={{fontSize: 30, fontWeight: 600}}>
@@ -103,9 +103,9 @@ export const EditProfile = ({support,imageSource, firstName, lastName, mail, wil
         
       </div>
     </div>
-    <div className='items-center' style={{display:'flex', width: 450, justifyContent:'space-between'}}>
-      <TextField className='' label='First Name' variant='outlined' size='small' value={firstNameText} onChange={handleFirstNameChange} sx={{width:200,input:{fontFamily:'Open Sans'}, '& fieldset': {borderRadius: 7}}}/>
-      <TextField label='Last Name' variant='outlined' size='small' value={lastNameText} onChange={handleLastNameChange} sx={{width:200,input:{fontFamily:'Open Sans'},'& fieldset': {borderRadius: 7}}}/>
+    <div className='flex flex-col md:flex-row items-center md:w-[450px] w-[240px]' style={{display:'flex', width: 450, justifyContent:'space-between'}}>
+      <TextField className='md:w-[240px] w-[100px]' label='First Name' variant='outlined' size='small' value={firstNameText} onChange={handleFirstNameChange} sx={{width:200,input:{fontFamily:'Open Sans'}, '& fieldset': {borderRadius: 7}}}/>
+      <TextField className='md:w-[240px] w-[100px]' label='Last Name' variant='outlined' size='small' value={lastNameText} onChange={handleLastNameChange} sx={{width:200,input:{fontFamily:'Open Sans'},'& fieldset': {borderRadius: 7}}}/>
     </div>
     <TextField label='Email' variant='outlined' size='small' value={mailText} onChange={handleMailChange} sx={{width:450,input:{fontFamily:'Open Sans'},'& fieldset': {borderRadius: 7}}}/>
     <div style={{background: 'white', height: 35.7, border:'1px solid #C4C4C4', width: 450,borderRadius:65,paddingLeft:5,display:'flex',gap:2,justifyContent:'center'}}>  

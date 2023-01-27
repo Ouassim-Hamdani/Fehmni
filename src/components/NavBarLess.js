@@ -35,7 +35,7 @@ export const NavBarLess = ({invisible,name,imageSource,nameNotification,session}
 
   let notif
   if(nameNotification === undefined || session === undefined){
-    notif=<div className='fixed top-16' style={{width: 250,display: 'flex',flexDirection:'column',alignItems: 'center', zIndex: 100, borderRadius:6,backgroundColor:'white', marginTop:15, marginLeft: 900,paddingTop:15,paddingBottom:15}}>No notification.</div>
+    notif=<div className='fixed top-16 md:right-[200px] right-10' style={{width: 250,display: 'flex',flexDirection:'column',alignItems: 'center', zIndex: 100, borderRadius:6,backgroundColor:'white', marginTop:15,paddingTop:15,paddingBottom:15}}>No notification.</div>
   }else{
     notif=<div className='fixed top-16' style={{width: 250,display: 'flex',flexDirection:'column',alignItems: 'center', zIndex: 100, borderRadius:6,backgroundColor:'white', marginTop:15, marginLeft: 900,paddingTop:15,paddingBottom:15}}>No notification.</div>
   }
@@ -49,13 +49,11 @@ export const NavBarLess = ({invisible,name,imageSource,nameNotification,session}
 
   return(
     <>
-  <header className='w-full top-0  bg-violet-400 py-3 fixed'>
+  <header className='w-full top-0  bg-violet-400 py-3 fixed opacity-80'>
     <div className='' style={{display: 'flex', justifyContent:'space-between', alignItems: 'center', width : '65%'}}>
       <a href='/'><img style={{height:18,marginTop:4}} src={Logo} alt='Logo'/></a>
-      <Box sx={{display: 'flex', justifyContent:'space-between',width:400,minWidth:300}}>
-      </Box>
     </div>
-    <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}> 
+    <div className='w-1/3 md:w-auto' style={{display:'flex', flexDirection:'row', alignItems:'center'}}> 
       <button className="buttons" onClick={handleNotificationClick}>
           <Avatar style={{backgroundColor : isShownNotification ? '#F0F0F2' : 'white', width : 40 , height : 40}}>
             <Badge sx={{"& .MuiBadge-badge": {backgroundColor: "#5AC98D"}}} variant='dot' overlap='circular' invisible={invisible}>
@@ -65,7 +63,7 @@ export const NavBarLess = ({invisible,name,imageSource,nameNotification,session}
         </button>
         <button onClick={handleProfileClick} style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', backgroundColor: 'transparent', borderColor: 'transparent', cursor: 'pointer', paddingTop: 4,width: 240}}>
           {userPicture}
-            <div style={{fontFamily: 'Open Sans', fontWeight: 600, fontSize: 13.5, marginRight: 2, marginLeft: 15, maxWidth: 150, whiteSpace: 'nowrap', overflow: 'hidden'}}>{name}</div>
+            <div className='md:flex hidden' style={{fontFamily: 'Open Sans', fontWeight: 600, fontSize: 13.5, marginRight: 2, marginLeft: 15, maxWidth: 150, whiteSpace: 'nowrap', overflow: 'hidden'}}>{name}</div>
           {expand}
         </button>
     </div>
