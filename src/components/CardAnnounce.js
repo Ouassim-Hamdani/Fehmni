@@ -16,6 +16,7 @@ import { cardInfo }  from '../constants/constants';
 import { useState } from 'react';
 //      <span className='hidden torender bg-[#3799F3] text-white fill-white '></span> 
 //      <span className='hidden torender bg-[#4132DA] text-white fill-white '></span> 
+import { wilayas } from '../constants/constants';
 export const CardAnnounce = ({cardList}) => {
   let activeCard  = cardInfo;
   if (cardList!==undefined) {
@@ -23,11 +24,11 @@ export const CardAnnounce = ({cardList}) => {
   }
   let [savedState,setSavedState] = useState(activeCard.isSaved);
   let colorLevel,colorText;
-  if (activeCard.level[2]==="P") {
+  if (activeCard.category==="P") {
     colorLevel="#FEA602";
     colorText="gray-800";
   }
-  else if (activeCard.level[2]==="M") {
+  else if (activeCard.category==="L") {
       colorLevel="#4132DA";
       colorText="white";
   }
@@ -46,31 +47,30 @@ export const CardAnnounce = ({cardList}) => {
       activeCard.isSaved = true;
       setSavedState(true)
   };
-  console.log(savedState)
   }
   return (
       <Card className='rounded-xl p-4 border border-gray-200' sx={{ maxWidth: 300 }}>
-      <a href="/announce/1">
+      <a href={"/announcement/?id="+activeCard.id}>
 
 <CardMedia
   className='rounded-xl'
   component="img"
   alt="Thumbnail image"
   height="120"
-  src={require("../assets/"+activeCard.image)}
+  src="https://i.ytimg.com/vi/W5nMzJ1CwcE/hqdefault.jpg"
 />
 <CardContent className='space-y-4 p-0 pt-2'>
-  <Typography gutterBottom variant="h6" className=' font-medium  text-gray-800' component="div">
-    {activeCard.title}
+  <Typography gutterBottom variant="h6" className='whitespace-nowrap overflow-hidden text-ellipsis font-medium  text-gray-800' component="div">
+    {activeCard.name}
   </Typography>
   <div className='flex flex-row items-center justify-between'>
     <div className='flex flex-row items-center space-x-2'>
-    <Avatar src={require("../assets/"+activeCard.user.avatar)} className="w-8 h-8"></Avatar>
-    <Typography variant="body1">{activeCard.user.name}</Typography>
+    <Avatar src="https://media.pitchfork.com/photos/630fa4720cf0867da736a0be/2:1/w_2560%2Cc_limit/Taylor%2520Swift.jpg" className="w-8 h-8"></Avatar>
+    <Typography variant="body1">{activeCard.user.username}</Typography>
     </div>
     <div className='level'>
 
-      <Chip label={activeCard.level} size='small' className={`bg-[${colorLevel}] text-${colorText} text-sm`} icon={<SchoolOutlinedIcon className={`w-5 h-5 fill-${colorText}`} />}/>
+      <Chip label="1st" size='small' className={`bg-[${colorLevel}] text-${colorText} text-sm`} icon={<SchoolOutlinedIcon className={`w-5 h-5 fill-${colorText}`} />}/>
     </div>
   </div>
   <Typography className='text-green-700 font-semibold' variant="h5">{activeCard.price} DA</Typography>
@@ -81,12 +81,12 @@ export const CardAnnounce = ({cardList}) => {
   <div className='flex flex-row items-center space-x-4'>
       <div className='module items-center flex flex-row space-x-2'>
         <img src={moduleIcon} alt="" />
-        <span className='text-[#444444]'>{activeCard.module}</span>
+        <span className='text-[#444444] whitespace-nowrap text-ellipsis overflow-hidden max-w-[12ch]'>{activeCard.module}</span>
       </div>
       <div className='location items-center flex flex-row'>
-        {activeCard.status==="onsite"?<LocationOnIcon className='fill-[#444444]'></LocationOnIcon>:<img className='pr-2' src={zoomIcon} alt="" />}
+        {activeCard.modalite==="P"?<LocationOnIcon className='fill-[#444444]'></LocationOnIcon>:<img className='pr-2' src={zoomIcon} alt="" />}
         
-        <span className='text-[#444444]'>{activeCard.status==="onsite"?activeCard.location:"Online"}</span>
+        <span className='text-[#444444]'>{activeCard.modalite==="P"?wilayas[activeCard.wilaya]:"Online"}</span>
       </div>
   </div>
   

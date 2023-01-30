@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from 'react';
 import { imagesAnnounce } from '../../constants/constants';
-export const TopSection = () => {
+export const TopSection = ({data}) => {
   let [slidesShow,setSlidesShow] = useState(3);
   const settings = {
     dots: true,
@@ -44,7 +44,7 @@ export const TopSection = () => {
     <div className='p-10 pt-24 space-y-4'>
       <Typography variant="h5" className='font-semibold text-gray-900 md:text-left text-center'>Full math revision course 2022</Typography>
       <div className='rounded-xl px-4 pb-10 pt-3 space-y-3 border bg-white border-gray-200 '>
-        <Typography variant="h6" className='text-green-600'>1500 DA</Typography>
+        <Typography variant="h6" className='text-green-600'>{data.price} DA</Typography>
         <Slider {...settings} className="">
           {imagesAnnounce.map((item)=>{
             return(

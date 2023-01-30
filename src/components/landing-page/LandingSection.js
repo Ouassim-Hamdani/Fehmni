@@ -18,7 +18,7 @@ export const LandingSection = ({variant, support,fct}) => { //variant loggedIn &
 
   let plusButton
   if(variant === "loggedIn"){
-    plusButton = <IconButton className="right-10 bottom-10 w-10 h-10" style={{position:'fixed'}}><AddCircleRounded className='text-[#2594FA] hover:text-[#F5AC22] hover:rotate-90 transition-all bottom-10 right-10' sx={{ width: 60, height: 60}} onClick={handleClick} /></IconButton>
+    plusButton = <IconButton id='plus' className="right-10 bottom-10 w-10 h-10" style={{position:'fixed'}}><AddCircleRounded className='text-[#2594FA] hover:text-[#F5AC22] hover:rotate-90 transition-all bottom-10 right-10' sx={{ width: 60, height: 60}} onClick={handleClick} /></IconButton>
   }
 
   let plusButtonMobile

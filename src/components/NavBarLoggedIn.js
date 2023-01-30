@@ -19,10 +19,7 @@ export const NavBarLoggedIn = ({invisible,name,imageSource,nameNotification,sess
   announcements=<a href='#announcements' style={{fontFamily:'Open Sans',fontSize:14,fontWeight:500,color:'black',textDecoration:'none',flex:1}}>Announcements</a>
   aboutus=<a href='#aboutus' style={{fontFamily:'Open Sans',fontSize:14,fontWeight:500,color:'black',textDecoration:'none',flex:1}}>About us</a>
   
-  if(window.location.pathname === '/' || window.location.pathname === '/'){
-    home=<a href='/' style={{fontFamily:'Open Sans',fontSize:14,fontWeight:800,color:'black',textUnderlineOffset:18,flex:1,textDecorationThickness:3}}>Home</a>
-  }
-  else if(window.location.pathname === '#announcements'){
+  if(window.location.pathname === '#announcements'){
     announcements=<a href='#announcements' style={{fontFamily:'Open Sans',fontSize:14,fontWeight:800,color:'black',textUnderlineOffset:18,flex:1,textDecorationThickness:3}}>Announcements</a>
   }
   else if(window.location.pathname === '/aboutus'){
