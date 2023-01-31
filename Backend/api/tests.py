@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.test import RequestFactory
-from rest_framework.test import APITestCase
 from api.models import Announcement
 from api.serializers import CreateAnnouncementSerializer
 from api.views import createAnnouncement
